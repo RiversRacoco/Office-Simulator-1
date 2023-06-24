@@ -23,4 +23,8 @@ ScriptError: could not find label 'warehouse'.
 Linux-5.13.0-valve36-1-neptune-x86_64-with-glibc2.36 x86_64
 Ren'Py 8.1.0.23051307
 Office Simulator 2024 0.1
+<<<<<<< Updated upstream
 Sat Jun 24 10:01:17 2023
+=======
+Thu Jun 22 15:14:31 2023
+>>>>>>> Stashed changes
