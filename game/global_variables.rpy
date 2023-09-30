@@ -16,10 +16,9 @@ init python:
             self.name = name
             self.playerHave = playerHave
 
-##$ playerPronounPart1 = "null"
-##$ playerPronounPart2 = "null"
-$ playerTraits = []
-$ inventory = []
-$ officeCoin = 0
-$ bonzi_quest_stage = 0  # Setting the value of 'first_visit' to 0
-$ bonzi_quest_update = false
+
+    
+$ persistent.playerTraits = []
+$ persistent.inventory = []
+$ persistent.officeCoinAmount = 0
+$ persistent.sherylPoints = 0
