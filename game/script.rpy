@@ -42,8 +42,29 @@ label tour_lobby:
     j "Anyways, let me give you the tour"
     j "This here is the lobby"
     j "This is where we put up our corporate front to throw the unsuspecting federal agents off our trail"
-    j "If you listen closely, you can hear the POW's screams from the {i}pit{/i}"
-    jump tour_elevator
+    j "If you listen closely, you can hear the ones we have captured's screams from the {i}pit{/i}"
+    j "It's here that you can also interact with the general populace who have come to gaze upon our fine establishment with their indifferent gaze"
+    j "we'll have to ask you to refrain from harrassing the guests, wether that method be via cans of Bush's Baked Beans or by Hijacking Sheryl's intercom to play Despacito"
+    j "Speaking of, this is Sheryl"
+
+    show jack neutral:
+        ease 1 left
+
+    show sheryl desk:
+        right
+    with moveinright
+    
+    j "She's our receptionist!"
+
+    menu:
+        "Is she stuck to the desk?":
+            j "Honestly? we don't know"
+            j "Wherever she goes that desk does too, at this point we're convinvced either it's a comfort thing or God just ran out of a budget and couldn't afford too seperate her sprite from the desk"
+        "She's... a moose?":
+            show jack pointing
+            j "Be nice!"
+            j "Without her hard work these past 4 years the company would have crumbled into ashes"
+
 
 label tour_elevator:
     scene elevator
@@ -58,15 +79,28 @@ label tour_elevator:
     menu:
         "Wow, don't you think that motto is rather harsh?":
             j "You would be surprised how many people kill themselves thinking they can get out of work"
-            jump tour_lounge
 
 label tour_offices:
+    scene office
+    show jack neutral:
     
+    j "This here is your office"
+    j "This is where you will work when you aren't meandering about the office like cattle"
+    j "You can use your computer to upload pictures to social media or view emails!"
+    menu:
+        "What if i want to... yknow... actually work?":
+            j "Well, i would tell you could do that too but we can't actually afford any office software for you to work"
+            j "We already spent most of this year's fiscal budget on the Lobby and Paying Aiden"
 label tour_hallway:
-
+    scene hallway
+    show jack neutral
+    j "this here is the hallway"
+    j "There's not much here outside of the Mangement's Offices, which is where you can find me if you ever need to. No guarantees that i'll be of any help though!"
+    j "The bathrooms are also here, but most of the guests feel invited to just piss wherever they like on the floor so we don't expect you to use them either"
+    j "We also have the janitor's closet here"
+    j "And last but not least, we have the photocopier Room. Please don't break it. it's not only a vintage relic from the 70s but we also can't afford to replace it"
 label tour_lounge:
     scene lounge
-    play music "day_1_theme.mp3"
     show jack neutral
 
     j "This here is the employee lounge"
@@ -132,10 +166,18 @@ label tour_boardroom:
 
         "Would you accept a Hamburger I have had in my pocket since last thursday?":
             j "I don't even want to know why you keep hamburgers in your pocket... especially for that long!"
-    jump post_tour
+
 
 label tour_warehouse:
-
+    scene warehouse
+    show jack neutral
+    j "This here is the Warehouse"
+    j "This is where we keep all our supplies {i}along with all the remains of the Carcassess from Aiden's last rampage{/i}"
+    j "If you need something chances are you can get it from here!"
+    j "Just be sure not to get lost here. We wouldn't want you getting lost and the Interns finding you"
+    menu:
+        "I-interns?":
+            j "Yeah. We have a infestation of them after we hired some to fetch coffee for us. The moment they stepped foot in here they scuttled off like roaches and are hiding among the shelves. If you're not careful they will eat you alive"
 label tour_parking_garage:
 
 
@@ -162,6 +204,8 @@ label post_tour:
             j "Oh, so nothing serious then"
 
         "I have rabies.":
+            python:
+                playerTraits.append(rabies)
             j "{i}Just stay 6 feet away from me and all the customers, and you should be fine{/i}"
 
         "I'm a drama kid":
